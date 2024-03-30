@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #fff;
+    --text-color: #555;
+    --tittle-color: #000;
+}
+
+.dark-theme {
+    --background-color: #000;
+    --text-color: #999;
+    --tittle-color: #fff;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    transition: background 0.9s, color 0.9s;
+}
+
+.header {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo img {
+    width: 80px;
+}
+
+nav ul {
+    width: 100%;
+    text-align: right;
+    list-style: none;
+    margin-right: 50px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 5px 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* toggle btn */
+.toggle-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle-btn img {
+    width: 20px;
+
+}
+
+.checkbox {
+    width: 80px;
+    height: 40px;
+    background: #222;
+    appearance: none;
+    /* Ẩn dấu tích */
+    border-radius: 40px;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+        inset 0 8px 8px rgba(0, 0, 0, 0.1),
+        inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.checkbox::before {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    background: linear-gradient(to bottom, #444, #222);
+    border-radius: 160px;
+    transform: scale(0.9);
+    transition: 0.5s;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+        inset 4px 4px rgba(255, 255, 255, 0.2),
+        inset -4px 4px rgba(255, 255, 255, 0.2);
+}
+
+.checkbox::before img {
+    width: 15px;
+    margin-left: 10px;
+}
+
+.checkbox:checked {
+    background: #fff;
+    box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1),
+        inset 0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.checkbox:checked::before {
+    left: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1),
+        inset 4px 4px rgba(255, 255, 255, 1),
+        inset -4px 4px rgba(255, 255, 255, 1);
+    background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+}
+
+/* content */
+.content {
+    margin-top: 10%;
+    max-width: 1200px;
+}
+
+.content h1 {
+    font-size: 80px;
+    font-family: serif;
+    color: var(--tittle-color);
+    font-weight: 600;
+}
+
+.content h1 span {
+    font-family: serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.content a {
+    background: #4864ff;
+    color: #fff;
+    padding: 15px 70px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+.img-box img {
+    width: 500px;
+    display: block;
+}
+
+.img-box {
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}
+
+.pattern {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    transform: rotate(40deg);
+    z-index: -1;
+}
+
+.pattern img {
+    width: 450px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: move 1s linear infinite alternate-reverse;
+}
+
+.pattern img:nth-child(1) {
+    transform: rotate(-45deg) translate(-70px, -50px);
+    animation-delay: .5s;
+}
+
+.pattern img:nth-child(2) {
+    transform: rotate(65deg) translate(0px, -54px) scale(.8);
+    animation-delay: 1.5s;
+}
+
+@keyframes move {
+    100% {
+        margin-left: 40px;
+        margin-top: 20px;
+        opacity: .3;
+    }
+}
