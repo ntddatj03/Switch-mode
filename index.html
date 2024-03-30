@@ -11,7 +11,7 @@
 <body>
     <div class="header">
         <nav>
-            <a href="#" class="logo"><img id="logo" src="img/logo.png" alt=""></a>
+            <a href="#"><img class="logo" id="logo" src="img/logo.png" alt=""></a>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Profile</a></li>
@@ -19,9 +19,8 @@
                 <li><a href="#">Contact</a></li>
             </ul>
 
-            <div class="toggle-btn" id="toggle-btn">
-                <img id="btnIcon" src="img/moon.png" alt="">
-                <input type="checkbox" id="checkbox" class="checkbox">
+            <div class="switch-theme-btn" id="switch-theme-btn">
+                <img id="switch-theme-icon" class="switch-theme-icon" src="" alt="">
             </div>
         </nav>
 
@@ -41,25 +40,7 @@
         </div>
     </div>
 
-
-    <script>
-        let btn = document.getElementById('toggle-btn');
-        let btnIcon = document.getElementById('btnIcon');
-        let logo = document.getElementById('logo');
-
-        btn.onclick = function () {
-            document.body.classList.toggle("dark-theme");
-
-            if (document.body.classList.contains("dark-theme")) {
-                btnIcon.src = "img/sun.png";
-                logo.src = "img/logo.png";
-            } else {
-                btnIcon.src = "img/moon.png";
-                logo.src = "img/logo-white.png";
-            }
-        }
-
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
