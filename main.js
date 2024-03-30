@@ -13,14 +13,15 @@ const btnTheme = document.querySelector('.switch-theme-btn');
         function load() {
             const darkTheme = localStorage.getItem('dark-theme');
 
+            //if the dark mode was never activated
             if (!darkTheme) {
                 store(false);
                 iconTheme.src = "img/sun.png";
-            } else if (darkTheme == 'true') {
+            } else if (darkTheme == 'true') { //if the dark mode is activated
                 body.classList.add('dark-theme');
                 iconTheme.src = "img/moon.png";
                 logo.src = "img/logo-white.png";
-            } else {
+            } else { //if the dark mode exists but is disabled
                 iconTheme.src = "img/sun.png";
                 logo.src = "img/logo.png";
             }
